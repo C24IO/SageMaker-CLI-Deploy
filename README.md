@@ -52,7 +52,7 @@ aws sagemaker create-model —cli-input-json file://create_model.json
 aws sagemaker create-endpoint-config --cli-input-json file://create_config.json
 ```
 
-### Step 4: deploy the endpoint
+### Step 5: deploy the endpoint
 
 ```bash
 aws sagemaker create-endpoint --endpoint-name '<provide your endpoint name>' --endpoint-config-name '<insert your endpoint config name>'

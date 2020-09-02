@@ -27,7 +27,7 @@ if required, include the  following environment variables:
 
 ### Step 2: create sagemaker model using create_model.json
 ```bash 
-aws sagemaker create-model —cli-input-json file://create_model.json
+aws sagemaker create-model --model-name <<model name>>  --primary-container  Image=<<Docker image location>>  --execution-role-arn <<Role ARN>> --region <<region>>
 ```
 
 ### Step 3: define create_config.json
@@ -59,3 +59,5 @@ aws sagemaker create-endpoint --endpoint-name '<provide your endpoint name>' --e
 ```
 
 Thanks to - [Pratyush Bagaria](https://github.com/prats13bag) for this code snippet. 
+
+Security config and VPC config using CLI 

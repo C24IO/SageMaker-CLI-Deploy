@@ -32,6 +32,10 @@ aws sagemaker create-model —cli-input-json file://create_model.json
 OR
 
 aws sagemaker create-model --model-name <<model name>>  --primary-container  Image=<<Docker image location>>  --execution-role-arn <<Role ARN>> --region <<region>>
+
+OR 
+
+aws sagemaker create-model --model-name <value> --primary-container Image=<<Docker image location>> --execution-role-arn <<ROLE ARN>> --tags <<Billing tags>> --vpc-config <<VPC config>> [--enable-network-isolation | --no-enable-network-isolation]
 ```
 
 ### Step 3: define create_config.json

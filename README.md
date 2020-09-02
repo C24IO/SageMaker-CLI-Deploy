@@ -27,6 +27,10 @@ if required, include the  following environment variables:
 
 ### Step 2: create sagemaker model using create_model.json
 ```bash 
+aws sagemaker create-model —cli-input-json file://create_model.json
+
+OR
+
 aws sagemaker create-model --model-name <<model name>>  --primary-container  Image=<<Docker image location>>  --execution-role-arn <<Role ARN>> --region <<region>>
 ```
 

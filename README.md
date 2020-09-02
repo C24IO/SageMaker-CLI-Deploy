@@ -14,7 +14,7 @@
 }
 ```
 
-if required, include the  following environment variables:
+if required, include the following environment variables:
 ```json
  "Environment": {
             "SAGEMAKER_PROGRAM": "<specify your entry-point.py script>",
@@ -24,6 +24,23 @@ if required, include the  following environment variables:
             "SAGEMAKER_CONTAINER_LOG_LEVEL": "20"            
         }
 ```        
+
+if required, include the following VPC config:
+
+```json
+VpcConfig: {
+      "Subnets": [
+          "subnet-0123456789abcdef0",
+          "subnet-0123456789abcdef1",
+          "subnet-0123456789abcdef2"
+          ],
+      "SecurityGroupIds": [
+          "sg-0123456789abcdef0"
+          ]
+       }
+```
+
+Reference: - [vpc-config](https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html)
 
 ### Step 2: create sagemaker model using create_model.json
 ```bash 
@@ -37,6 +54,8 @@ OR
 
 aws sagemaker create-model --model-name <value> --primary-container Image=<<Docker image location>> --execution-role-arn <<ROLE ARN>> --tags <<Billing tags>> --vpc-config <<VPC config>> [--enable-network-isolation | --no-enable-network-isolation]
 ```
+
+Reference - [create-model](https://docs.aws.amazon.com/cli/latest/reference/sagemaker/create-model.html)
 
 ### Step 3: define create_config.json
 

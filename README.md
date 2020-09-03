@@ -86,5 +86,3 @@ aws sagemaker create-endpoint --endpoint-name '<provide your endpoint name>' --e
 ```
 
 Thanks to - [Pratyush Bagaria](https://github.com/prats13bag) for this code snippet. 
-
-Security config and VPC config using CLI 
